@@ -1,3 +1,17 @@
+import { useState } from "react";
+import Sidebar from "./sidebar";
+import Editor from "./editor";
+
 export default function App() {
-  return <p>Welcome to my memo app!!</p>;
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingMemo, setEditingMemo] = useState(null);
+  return (
+    <div>
+      <Sidebar
+        changeEditMode={() => setIsEditing(true)}
+        setEditingMemo={(memo) => setEditingMemo(memo)}
+      />
+      {isEditing && <Editor editingMemo={editingMemo} />}
+    </div>
+  );
 }
