@@ -1,12 +1,9 @@
-import { useState } from "react";
-
-export default function Editor({ editingMemo }) {
-  const [editingMemoBody, setEditingMemoBody] = useState(editingMemo.body);
+export default function Editor({ editingMemo, setEditingMemo }) {
   function handleEdit() {
     const memos = JSON.parse(localStorage.getItem("memos"));
     const newMemos = memos.map((memo) => {
       if (memo.id === editingMemo.id) {
-        return { ...memo, body: editingMemoBody };
+        return { ...memo, body: editingMemo.body };
       } else {
         return memo;
       }
@@ -20,8 +17,10 @@ export default function Editor({ editingMemo }) {
         <textarea
           name="yourText"
           placeholder="Enter your text"
-          value={editingMemoBody}
-          onChange={(e) => setEditingMemoBody(e.target.value)}
+          value={editingMemo.body}
+          onChange={(e) =>
+            setEditingMemo({ ...editingMemo, body: e.target.value })
+          }
           rows={8}
           cols={40}
         />

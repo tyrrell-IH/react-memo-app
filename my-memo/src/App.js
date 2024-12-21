@@ -9,9 +9,15 @@ export default function App() {
     <div>
       <Sidebar
         changeEditMode={() => setIsEditing(true)}
+        editingMemo={editingMemo}
         setEditingMemo={(memo) => setEditingMemo(memo)}
       />
-      {isEditing && <Editor editingMemo={editingMemo} />}
+      {isEditing && (
+        <Editor
+          editingMemo={editingMemo}
+          setEditingMemo={(memo) => setEditingMemo(memo)}
+        />
+      )}
     </div>
   );
 }
