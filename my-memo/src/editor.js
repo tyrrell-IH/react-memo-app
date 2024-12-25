@@ -9,6 +9,7 @@ export default function Editor({ setIsEditing, editingMemo, setEditingMemo }) {
       }
     });
     localStorage.setItem("memos", JSON.stringify(newMemos));
+    setIsEditing(false);
   }
 
   function handleDelete() {
