@@ -1,4 +1,4 @@
-export default function Editor({ setIsEditing, editingMemo, setEditingMemo }) {
+export default function Editor({ editingMemo, setEditingMemo }) {
   function handleEdit() {
     const memos = JSON.parse(localStorage.getItem("memos"));
     const newMemos = memos.map((memo) => {
@@ -9,14 +9,14 @@ export default function Editor({ setIsEditing, editingMemo, setEditingMemo }) {
       }
     });
     localStorage.setItem("memos", JSON.stringify(newMemos));
-    setIsEditing(false);
+    setEditingMemo(null);
   }
 
   function handleDelete() {
     const memos = JSON.parse(localStorage.getItem("memos"));
     const newMemos = memos.filter((memo) => memo.id !== editingMemo.id);
     localStorage.setItem("memos", JSON.stringify(newMemos));
-    setIsEditing(false);
+    setEditingMemo(null);
   }
 
   return (

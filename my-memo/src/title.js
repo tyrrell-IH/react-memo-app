@@ -1,4 +1,4 @@
-export default function Title({ changeEditMode, editingMemo, setEditingMemo }) {
+export default function Title({ editingMemo, setEditingMemo }) {
   const memos = JSON.parse(localStorage.getItem("memos")) ?? [];
   const titles = memos.map((memo) => {
     const title = memo.body.split("\n")[0];
@@ -10,7 +10,6 @@ export default function Title({ changeEditMode, editingMemo, setEditingMemo }) {
         <a
           href="#"
           onClick={() => {
-            changeEditMode();
             setEditingMemo(memo);
           }}
         >
