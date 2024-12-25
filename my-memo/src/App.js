@@ -14,6 +14,7 @@ export default function App() {
       />
       {isEditing && (
         <Editor
+          setIsEditing={setIsEditing}
           editingMemo={editingMemo}
           setEditingMemo={(memo) => setEditingMemo(memo)}
         />

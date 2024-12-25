@@ -1,4 +1,4 @@
-export default function Editor({ editingMemo, setEditingMemo }) {
+export default function Editor({ setIsEditing, editingMemo, setEditingMemo }) {
   function handleEdit() {
     const memos = JSON.parse(localStorage.getItem("memos"));
     const newMemos = memos.map((memo) => {
@@ -9,6 +9,13 @@ export default function Editor({ editingMemo, setEditingMemo }) {
       }
     });
     localStorage.setItem("memos", JSON.stringify(newMemos));
+  }
+
+  function handleDelete() {
+    const memos = JSON.parse(localStorage.getItem("memos"));
+    const newMemos = memos.filter((memo) => memo.id !== editingMemo.id);
+    localStorage.setItem("memos", JSON.stringify(newMemos));
+    setIsEditing(false);
   }
 
   return (
@@ -26,6 +33,7 @@ export default function Editor({ editingMemo, setEditingMemo }) {
         />
       </label>
       <button onClick={handleEdit}>編集</button>
+      <button onClick={handleDelete}>削除</button>
     </form>
   );
 }
