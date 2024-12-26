@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Sidebar from "./sidebar";
+import TitleIndex from "./title_index";
 import Editor from "./editor";
 
 export default function App() {
@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div>
       {editingMemo === null ? "一覧" : "編集"}
-      <Sidebar
+      <TitleIndex
         editingMemo={editingMemo}
         setEditingMemo={(memo) => setEditingMemo(memo)}
       />
