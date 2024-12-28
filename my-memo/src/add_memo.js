@@ -1,4 +1,5 @@
 import { v4 as uuid } from "uuid";
+import "./add_memo.css";
 
 export default function AddMemo({ setEditingMemo }) {
   function handleClick() {
@@ -10,7 +11,7 @@ export default function AddMemo({ setEditingMemo }) {
   }
   return (
     <li>
-      <a href="#" onClick={handleClick} style={{ textDecoration: "none" }}>
+      <a className="add-memo" href="#" onClick={handleClick}>
         +
       </a>
     </li>
