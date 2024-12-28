@@ -5,6 +5,7 @@ import "./App.css";
 
 export default function App() {
   const [editingMemo, setEditingMemo] = useState(null);
+  const allMemos = JSON.parse(localStorage.getItem("memos"));
   return (
     <div className="memo-app">
       {editingMemo === null ? "一覧" : "編集"}
@@ -12,11 +13,13 @@ export default function App() {
         <TitleIndex
           editingMemo={editingMemo}
           setEditingMemo={(memo) => setEditingMemo(memo)}
+          allMemos={allMemos}
         />
         {editingMemo !== null && (
           <Editor
             editingMemo={editingMemo}
             setEditingMemo={(memo) => setEditingMemo(memo)}
+            allMemos={allMemos}
           />
         )}
       </div>

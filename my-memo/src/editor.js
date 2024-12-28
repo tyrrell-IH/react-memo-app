@@ -1,9 +1,8 @@
 import "./editor.css";
 
-export default function Editor({ editingMemo, setEditingMemo }) {
+export default function Editor({ editingMemo, setEditingMemo, allMemos }) {
   function handleEdit() {
-    const memos = JSON.parse(localStorage.getItem("memos"));
-    const newMemos = memos.map((memo) => {
+    const newMemos = allMemos.map((memo) => {
       if (memo.id === editingMemo.id) {
         return { ...memo, body: editingMemo.body };
       } else {
@@ -15,8 +14,7 @@ export default function Editor({ editingMemo, setEditingMemo }) {
   }
 
   function handleDelete() {
-    const memos = JSON.parse(localStorage.getItem("memos"));
-    const newMemos = memos.filter((memo) => memo.id !== editingMemo.id);
+    const newMemos = allMemos.filter((memo) => memo.id !== editingMemo.id);
     localStorage.setItem("memos", JSON.stringify(newMemos));
     setEditingMemo(null);
   }
