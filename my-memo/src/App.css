@@ -1,0 +1,11 @@
+.memo-app {
+  width: 560px;
+  background-color: lightgrey;
+  padding: 10px 20px 30px 20px;
+}
+
+.memo-contents {
+  display: flex;
+  background-color: white;
+  min-height: 300px;
+}

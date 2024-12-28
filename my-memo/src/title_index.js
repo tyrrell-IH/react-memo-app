@@ -1,4 +1,5 @@
 import AddMemo from "./add_memo";
+import "./title_index.css";
 
 export default function TitleIndex({ editingMemo, setEditingMemo }) {
   const memos = JSON.parse(localStorage.getItem("memos")) ?? [];
@@ -22,7 +23,7 @@ export default function TitleIndex({ editingMemo, setEditingMemo }) {
   });
 
   return (
-    <ul style={{ listStyle: "none" }}>
+    <ul className="title-index">
       {titles}
       <AddMemo setEditingMemo={setEditingMemo} />
     </ul>

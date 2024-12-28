@@ -1,3 +1,5 @@
+import "./editor.css";
+
 export default function Editor({ editingMemo, setEditingMemo }) {
   function handleEdit() {
     const memos = JSON.parse(localStorage.getItem("memos"));
@@ -20,21 +22,25 @@ export default function Editor({ editingMemo, setEditingMemo }) {
   }
 
   return (
-    <form>
-      <label>
-        <textarea
-          name="yourText"
-          placeholder="Enter your text"
-          value={editingMemo.body}
-          onChange={(e) =>
-            setEditingMemo({ ...editingMemo, body: e.target.value })
-          }
-          rows={8}
-          cols={40}
-        />
-      </label>
-      <button onClick={handleEdit}>編集</button>
-      <button onClick={handleDelete}>削除</button>
-    </form>
+    <div className="editor">
+      <textarea
+        className="text-area"
+        placeholder="Enter your text"
+        value={editingMemo.body}
+        onChange={(e) =>
+          setEditingMemo({ ...editingMemo, body: e.target.value })
+        }
+        rows={8}
+        cols={40}
+      />
+      <div className="button-area">
+        <button className="button" onClick={handleEdit}>
+          編集
+        </button>
+        <button className="button" onClick={handleDelete}>
+          削除
+        </button>
+      </div>
+    </div>
   );
 }
