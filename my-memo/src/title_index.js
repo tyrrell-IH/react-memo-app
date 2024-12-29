@@ -24,7 +24,7 @@ export default function TitleIndex({ editingMemo, setEditingMemo, allMemos }) {
   return (
     <ul className="title-index">
       {titles}
-      <AddMemo setEditingMemo={setEditingMemo} />
+      <AddMemo setEditingMemo={setEditingMemo} allMemos={allMemos} />
     </ul>
   );
 }
