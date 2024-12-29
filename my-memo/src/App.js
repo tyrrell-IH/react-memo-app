@@ -6,6 +6,7 @@ import "./App.css";
 export default function App() {
   const [editingMemo, setEditingMemo] = useState(null);
   const allMemos = JSON.parse(localStorage.getItem("memos"));
+
   return (
     <div className="memo-app">
       {editingMemo === null ? "一覧" : "編集"}

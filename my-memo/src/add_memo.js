@@ -9,6 +9,7 @@ export default function AddMemo({ setEditingMemo }) {
     localStorage.setItem("memos", JSON.stringify(memos));
     setEditingMemo(newMemo);
   }
+
   return (
     <li>
       <a className="add-memo" href="#" onClick={handleClick}>
