@@ -1,3 +1,5 @@
 .add-memo {
+  cursor: pointer;
+  color: #551a8b;
   text-decoration: none;
 }

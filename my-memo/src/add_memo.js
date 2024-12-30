@@ -11,9 +11,9 @@ export default function AddMemo({ setEditingMemo, allMemos }) {
 
   return (
     <li>
-      <a className="add-memo" href="#" onClick={handleClick}>
+      <span className="add-memo" onClick={handleClick}>
         +
-      </a>
+      </span>
     </li>
   );
 }

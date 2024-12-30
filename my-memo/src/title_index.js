@@ -8,14 +8,14 @@ export default function TitleIndex({ editingMemo, setEditingMemo, allMemos }) {
     } else {
       return (
         <li key={memo.id}>
-          <a
-            href="#"
+          <span
+            className="unselected-list"
             onClick={() => {
               setEditingMemo(memo);
             }}
           >
             {memo.title}
-          </a>
+          </span>
         </li>
       );
     }
