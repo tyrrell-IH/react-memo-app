@@ -3,9 +3,8 @@ import "./title_index.css";
 
 export default function TitleIndex({ editingMemo, setEditingMemo, allMemos }) {
   const titles = allMemos.map((memo) => {
-    const title = memo.body.split("\n")[0];
     if (editingMemo !== null && memo.id === editingMemo.id) {
-      return <li key={memo.id}>{title}</li>;
+      return <li key={memo.id}>{memo.title}</li>;
     }
     return (
       <li key={memo.id}>
@@ -15,7 +14,7 @@ export default function TitleIndex({ editingMemo, setEditingMemo, allMemos }) {
             setEditingMemo(memo);
           }}
         >
-          {title}
+          {memo.title}
         </a>
       </li>
     );

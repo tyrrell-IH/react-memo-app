@@ -3,7 +3,7 @@ import "./add_memo.css";
 
 export default function AddMemo({ setEditingMemo, allMemos }) {
   function handleClick() {
-    const newMemo = { id: uuid(), body: "新規登録" };
+    const newMemo = { id: uuid(), title: "新規登録", body: "" };
     const newMemos = [...allMemos, newMemo];
     localStorage.setItem("memos", JSON.stringify(newMemos));
     setEditingMemo(newMemo);
