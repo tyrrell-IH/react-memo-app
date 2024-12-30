@@ -5,7 +5,7 @@ import "./App.css";
 
 export default function App() {
   const [editingMemo, setEditingMemo] = useState(null);
-  const allMemos = JSON.parse(localStorage.getItem("memos"));
+  const allMemos = JSON.parse(localStorage.getItem("memos")) ?? [];
 
   return (
     <div className="memo-app">
