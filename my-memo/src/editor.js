@@ -4,8 +4,7 @@ export default function Editor({ editingMemo, setEditingMemo, allMemos }) {
   function handleEdit() {
     const newMemos = allMemos.map((memo) => {
       if (memo.id === editingMemo.id) {
-        const title = editingMemo.body.split("\n")[0].trim();
-        return { ...memo, title: title, body: editingMemo.body };
+        return { ...memo, body: editingMemo.body };
       } else {
         return memo;
       }

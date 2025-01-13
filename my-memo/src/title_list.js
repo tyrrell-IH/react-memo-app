@@ -3,7 +3,7 @@ import "./title_list.css";
 
 export default function TitleList({ editingMemo, setEditingMemo, allMemos }) {
   const titles = allMemos.map((memo) => {
-    const memoTitle = memo.title || "Non Title";
+    const memoTitle = memo.body.split("\n")[0].trim() || "Non Title";
     if (editingMemo !== null && memo.id === editingMemo.id) {
       return <li key={memo.id}>{memoTitle}</li>;
     } else {
