@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TitleIndex from "./title_index";
+import TitleList from "./title_list";
 import Editor from "./editor";
 import "./App.css";
 
@@ -11,7 +11,7 @@ export default function App() {
     <div className="memo-app">
       {editingMemo === null ? "一覧" : "編集"}
       <div className="memo-contents">
-        <TitleIndex
+        <TitleList
           editingMemo={editingMemo}
           setEditingMemo={(memo) => setEditingMemo(memo)}
           allMemos={allMemos}

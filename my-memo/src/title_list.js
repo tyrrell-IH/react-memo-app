@@ -1,7 +1,7 @@
 import AddMemo from "./add_memo";
-import "./title_index.css";
+import "./title_list.css";
 
-export default function TitleIndex({ editingMemo, setEditingMemo, allMemos }) {
+export default function TitleList({ editingMemo, setEditingMemo, allMemos }) {
   const titles = allMemos.map((memo) => {
     if (editingMemo !== null && memo.id === editingMemo.id) {
       return <li key={memo.id}>{memo.title}</li>;
@@ -22,7 +22,7 @@ export default function TitleIndex({ editingMemo, setEditingMemo, allMemos }) {
   });
 
   return (
-    <ul className="title-index">
+    <ul className="title-list">
       {titles}
       <AddMemo setEditingMemo={setEditingMemo} allMemos={allMemos} />
     </ul>
