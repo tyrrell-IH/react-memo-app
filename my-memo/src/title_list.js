@@ -3,8 +3,9 @@ import "./title_list.css";
 
 export default function TitleList({ editingMemo, setEditingMemo, allMemos }) {
   const titles = allMemos.map((memo) => {
+    const memoTitle = memo.title || "Non Title";
     if (editingMemo !== null && memo.id === editingMemo.id) {
-      return <li key={memo.id}>{memo.title}</li>;
+      return <li key={memo.id}>{memoTitle}</li>;
     } else {
       return (
         <li key={memo.id}>
@@ -14,7 +15,7 @@ export default function TitleList({ editingMemo, setEditingMemo, allMemos }) {
               setEditingMemo(memo);
             }}
           >
-            {memo.title}
+            {memoTitle}
           </span>
         </li>
       );
