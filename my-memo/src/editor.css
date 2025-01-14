@@ -1,0 +1,21 @@
+.editor {
+  width: 260px;
+  padding: 0 20px;
+  margin: 16px 0;
+  display: block;
+  text-align: center;
+}
+
+.text-area {
+  width: 240px;
+  height: 20em;
+}
+
+.button-area {
+  display: block;
+  text-align: center;
+}
+
+.button {
+  margin: 0 10px;
+}

@@ -1,0 +1,11 @@
+.title-list {
+  width: 240px;
+  list-style: none;
+  padding: 0 20px;
+}
+
+.unselected-list {
+  cursor: pointer;
+  color: #551a8b;
+  text-decoration: underline;
+}
