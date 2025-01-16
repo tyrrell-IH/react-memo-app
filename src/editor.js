@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import "./editor.css";
+import { IsLoginContext } from "./login_context";
 
 export default function Editor({ editingMemo, setEditingMemo, allMemos }) {
+  const isLogin = useContext(IsLoginContext);
+
   function handleEdit() {
     const newMemos = allMemos.map((memo) => {
       if (memo.id === editingMemo.id) {
@@ -22,8 +26,9 @@ export default function Editor({ editingMemo, setEditingMemo, allMemos }) {
   return (
     <div className="editor">
       <textarea
+        readOnly={!isLogin}
         className="text-area"
-        placeholder="Enter your text"
+        placeholder={isLogin && "Enter your text"}
         value={editingMemo.body}
         onChange={(e) =>
           setEditingMemo({ ...editingMemo, body: e.target.value })
@@ -31,14 +36,16 @@ export default function Editor({ editingMemo, setEditingMemo, allMemos }) {
         rows={8}
         cols={40}
       />
-      <div className="button-area">
-        <button className="button" onClick={handleEdit}>
-          編集
-        </button>
-        <button className="button" onClick={handleDelete}>
-          削除
-        </button>
-      </div>
+      {isLogin && (
+        <div className="button-area">
+          <button className="button" onClick={handleEdit}>
+            編集
+          </button>
+          <button className="button" onClick={handleDelete}>
+            削除
+          </button>
+        </div>
+      )}
     </div>
   );
 }
