@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import AddMemo from "./add_memo";
 import "../css/title_list.css";
-import { IsLoginContext } from "../context/is_login_context";
+import { IsLoginContext } from "../context/login_context";
 
 export default function TitleList({ selectedMemo, setSelectedMemo, allMemos }) {
   const isLogin = useContext(IsLoginContext);
