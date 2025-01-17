@@ -14,7 +14,6 @@ export default function App() {
   return (
     <IsLoginContext.Provider value={isLogin}>
       <div className="memo-app">
-        {isLogin && selectedMemo !== null ? "編集" : "一覧"}
         {isLogin ? "ログイン済" : "未ログイン"}
         <div className="memo-contents">
           <LoginButton setIsLogin={setIsLogin} />
