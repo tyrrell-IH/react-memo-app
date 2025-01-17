@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./header";
 import TitleList from "./title_list";
 import Editor from "./editor";
 import LoginButton from "./login_button";
@@ -14,7 +15,7 @@ export default function App() {
   return (
     <IsLoginContext.Provider value={isLogin}>
       <div className="memo-app">
-        {isLogin ? "ログイン済" : "未ログイン"}
+        <Header />
         <div className="memo-contents">
           <LoginButton setIsLogin={setIsLogin} />
           <TitleList
