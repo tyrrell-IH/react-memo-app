@@ -17,19 +17,23 @@ export default function App() {
       <div className="memo-app">
         <Header />
         <div className="memo-contents">
-          <LoginButton setIsLogin={setIsLogin} />
-          <TitleList
-            selectedMemo={selectedMemo}
-            setSelectedMemo={(memo) => setSelectedMemo(memo)}
-            allMemos={allMemos}
-          />
-          {selectedMemo !== null && (
-            <Editor
+          <div className="memo-contents-header">
+            <LoginButton setIsLogin={setIsLogin} />
+          </div>
+          <div className="memo-contents-body">
+            <TitleList
               selectedMemo={selectedMemo}
               setSelectedMemo={(memo) => setSelectedMemo(memo)}
               allMemos={allMemos}
             />
-          )}
+            {selectedMemo !== null && (
+              <Editor
+                selectedMemo={selectedMemo}
+                setSelectedMemo={(memo) => setSelectedMemo(memo)}
+                allMemos={allMemos}
+              />
+            )}
+          </div>
         </div>
       </div>
     </IsLoginContext.Provider>
