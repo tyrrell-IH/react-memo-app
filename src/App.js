@@ -6,7 +6,7 @@ import { IsLoginContext } from "./login_context";
 import "./App.css";
 
 export default function App() {
-  const [editingMemo, setEditingMemo] = useState(null);
+  const [selectedMemo, setSelectedMemo] = useState(null);
   const [isLogin, setIsLogin] = useState(false);
 
   const allMemos = JSON.parse(localStorage.getItem("memos")) ?? [];
@@ -14,19 +14,19 @@ export default function App() {
   return (
     <IsLoginContext.Provider value={isLogin}>
       <div className="memo-app">
-        {isLogin && editingMemo !== null ? "編集" : "一覧"}
+        {isLogin && selectedMemo !== null ? "編集" : "一覧"}
         {isLogin ? "ログイン済" : "未ログイン"}
         <div className="memo-contents">
           <LoginButton setIsLogin={setIsLogin} />
           <TitleList
-            editingMemo={editingMemo}
-            setEditingMemo={(memo) => setEditingMemo(memo)}
+            selectedMemo={selectedMemo}
+            setSelectedMemo={(memo) => setSelectedMemo(memo)}
             allMemos={allMemos}
           />
-          {editingMemo !== null && (
+          {selectedMemo !== null && (
             <Editor
-              editingMemo={editingMemo}
-              setEditingMemo={(memo) => setEditingMemo(memo)}
+              selectedMemo={selectedMemo}
+              setSelectedMemo={(memo) => setSelectedMemo(memo)}
               allMemos={allMemos}
             />
           )}

@@ -2,25 +2,25 @@ import { useContext } from "react";
 import "./editor.css";
 import { IsLoginContext } from "./login_context";
 
-export default function Editor({ editingMemo, setEditingMemo, allMemos }) {
+export default function Editor({ selectedMemo, setSelectedMemo, allMemos }) {
   const isLogin = useContext(IsLoginContext);
 
   function handleEdit() {
     const newMemos = allMemos.map((memo) => {
-      if (memo.id === editingMemo.id) {
-        return { ...memo, body: editingMemo.body };
+      if (memo.id === selectedMemo.id) {
+        return { ...memo, body: selectedMemo.body };
       } else {
         return memo;
       }
     });
     localStorage.setItem("memos", JSON.stringify(newMemos));
-    setEditingMemo(null);
+    setSelectedMemo(null);
   }
 
   function handleDelete() {
-    const newMemos = allMemos.filter((memo) => memo.id !== editingMemo.id);
+    const newMemos = allMemos.filter((memo) => memo.id !== selectedMemo.id);
     localStorage.setItem("memos", JSON.stringify(newMemos));
-    setEditingMemo(null);
+    setSelectedMemo(null);
   }
 
   return (
@@ -29,9 +29,9 @@ export default function Editor({ editingMemo, setEditingMemo, allMemos }) {
         readOnly={!isLogin}
         className="text-area"
         placeholder={isLogin && "Enter your text"}
-        value={editingMemo.body}
+        value={selectedMemo.body}
         onChange={(e) =>
-          setEditingMemo({ ...editingMemo, body: e.target.value })
+          setSelectedMemo({ ...selectedMemo, body: e.target.value })
         }
         rows={8}
         cols={40}

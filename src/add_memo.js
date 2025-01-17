@@ -1,12 +1,12 @@
 import { v4 as uuid } from "uuid";
 import "./add_memo.css";
 
-export default function AddMemo({ setEditingMemo, allMemos }) {
+export default function AddMemo({ setSelectedMemo, allMemos }) {
   function handleClick() {
     const newMemo = { id: uuid(), body: "" };
     const newMemos = [...allMemos, newMemo];
     localStorage.setItem("memos", JSON.stringify(newMemos));
-    setEditingMemo(newMemo);
+    setSelectedMemo(newMemo);
   }
 
   return (
