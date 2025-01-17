@@ -4,9 +4,9 @@ import TitleList from "./title_list";
 import Editor from "./editor";
 import LoginButton from "./login_button";
 import { IsLoginContext } from "../context/login_context";
-import "../css/App.css";
+import "../css/memo_app.css";
 
-export default function App() {
+export default function MemoApp() {
   const [selectedMemo, setSelectedMemo] = useState(null);
   const [isLogin, setIsLogin] = useState(false);
 
