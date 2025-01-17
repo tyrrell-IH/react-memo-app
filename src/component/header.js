@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { IsLoginContext } from "./login_context";
+import { IsLoginContext } from "../context/login_context";
 
 export default function Header() {
   const isLogin = useContext(IsLoginContext);

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import "./editor.css";
-import { IsLoginContext } from "./login_context";
+import "../css/editor.css";
+import { IsLoginContext } from "../context/login_context";
 
 export default function Editor({ selectedMemo, setSelectedMemo, allMemos }) {
   const isLogin = useContext(IsLoginContext);

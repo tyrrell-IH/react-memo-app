@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import "./add_memo.css";
+import "../css/add_memo.css";
 
 export default function AddMemo({ setSelectedMemo, allMemos }) {
   function handleClick() {

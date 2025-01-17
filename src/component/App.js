@@ -3,8 +3,8 @@ import Header from "./header";
 import TitleList from "./title_list";
 import Editor from "./editor";
 import LoginButton from "./login_button";
-import { IsLoginContext } from "./login_context";
-import "./App.css";
+import { IsLoginContext } from "../context/login_context";
+import "../css/App.css";
 
 export default function App() {
   const [selectedMemo, setSelectedMemo] = useState(null);
