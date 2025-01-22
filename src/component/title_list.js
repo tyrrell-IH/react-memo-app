@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import AddMemo from "./add_memo";
+import { useIsLogin } from "../context/is_login_hooks";
 import "../css/title_list.css";
-import { IsLoginContext } from "../context/is_login_context";
 
 export default function TitleList({ selectedMemo, setSelectedMemo, allMemos }) {
-  const isLogin = useContext(IsLoginContext);
+  const { isLogin } = useIsLogin();
 
   const titles = allMemos.map((memo) => {
     const memoTitle = memo.body.split("\n")[0].trim() || "Non Title";

@@ -1,9 +1,8 @@
-import { useContext } from "react";
+import { useIsLogin } from "../context/is_login_hooks";
 import "../css/editor.css";
-import { IsLoginContext } from "../context/is_login_context";
 
 export default function Editor({ selectedMemo, setSelectedMemo, allMemos }) {
-  const isLogin = useContext(IsLoginContext);
+  const { isLogin } = useIsLogin();
 
   function handleEdit() {
     const newMemos = allMemos.map((memo) => {

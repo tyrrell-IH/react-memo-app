@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { IsLoginContext } from "../context/is_login_context";
+import { useIsLogin } from "../context/is_login_hooks";
 
-export default function LoginButton({ setIsLogin }) {
-  const isLogin = useContext(IsLoginContext);
+export default function LoginButton() {
+  const { isLogin, switchIsLogin } = useIsLogin();
 
   return (
     <button
       onClick={() => {
-        setIsLogin(!isLogin);
+        switchIsLogin();
       }}
     >
       {isLogin ? "ログアウト" : "ログイン"}

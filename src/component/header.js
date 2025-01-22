@@ -1,7 +1,6 @@
-import { useContext } from "react";
-import { IsLoginContext } from "../context/is_login_context";
+import { useIsLogin } from "../context/is_login_hooks";
 
 export default function Header() {
-  const isLogin = useContext(IsLoginContext);
+  const { isLogin } = useIsLogin();
   return <div>{isLogin ? "ログイン済" : "未ログイン"}</div>;
 }

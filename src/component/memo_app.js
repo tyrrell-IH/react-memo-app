@@ -3,22 +3,21 @@ import Header from "./header";
 import TitleList from "./title_list";
 import Editor from "./editor";
 import LoginButton from "./login_button";
-import { IsLoginContext } from "../context/is_login_context";
+import { IsLoginProvider } from "../context/is_login_hooks";
 import "../css/memo_app.css";
 
 export default function MemoApp() {
   const [selectedMemo, setSelectedMemo] = useState(null);
-  const [isLogin, setIsLogin] = useState(false);
 
   const allMemos = JSON.parse(localStorage.getItem("memos")) ?? [];
 
   return (
-    <IsLoginContext.Provider value={isLogin}>
+    <IsLoginProvider>
       <div className="memo-app">
         <Header />
         <div className="memo-contents">
           <div className="memo-contents-header">
-            <LoginButton setIsLogin={setIsLogin} />
+            <LoginButton />
           </div>
           <div className="memo-contents-body">
             <TitleList
@@ -36,6 +35,6 @@ export default function MemoApp() {
           </div>
         </div>
       </div>
-    </IsLoginContext.Provider>
+    </IsLoginProvider>
   );
 }
