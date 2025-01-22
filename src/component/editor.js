@@ -1,8 +1,10 @@
 import { useIsLogin } from "../context/is_login_hooks";
+import { useSelectedMemo } from "../context/selected_memo_hooks";
 import "../css/editor.css";
 
-export default function Editor({ selectedMemo, setSelectedMemo, allMemos }) {
+export default function Editor({ allMemos }) {
   const { isLogin } = useIsLogin();
+  const { selectedMemo, setSelectedMemo } = useSelectedMemo();
 
   function handleEdit() {
     const newMemos = allMemos.map((memo) => {

@@ -1,9 +1,11 @@
 import AddMemo from "./add_memo";
 import { useIsLogin } from "../context/is_login_hooks";
+import { useSelectedMemo } from "../context/selected_memo_hooks";
 import "../css/title_list.css";
 
-export default function TitleList({ selectedMemo, setSelectedMemo, allMemos }) {
+export default function TitleList({ allMemos }) {
   const { isLogin } = useIsLogin();
+  const { selectedMemo, setSelectedMemo } = useSelectedMemo();
 
   const titles = allMemos.map((memo) => {
     const memoTitle = memo.body.split("\n")[0].trim() || "Non Title";
@@ -28,9 +30,7 @@ export default function TitleList({ selectedMemo, setSelectedMemo, allMemos }) {
   return (
     <ul className="title-list">
       {titles}
-      {isLogin && (
-        <AddMemo setSelectedMemo={setSelectedMemo} allMemos={allMemos} />
-      )}
+      {isLogin && <AddMemo allMemos={allMemos} />}
     </ul>
   );
 }
