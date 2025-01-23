@@ -1,27 +1,19 @@
 import { useIsLogin } from "../context/is_login_hooks";
 import { useSelectedMemo } from "../context/selected_memo_hooks";
+import { useMemos } from "../context/memos_hooks";
 import "../css/editor.css";
 
-export default function Editor({ allMemos }) {
+export default function Editor() {
   const { isLogin } = useIsLogin();
   const { selectedMemo, setSelectedMemo } = useSelectedMemo();
+  const { editMemo, deleteMemo } = useMemos();
 
   function handleEdit() {
-    const newMemos = allMemos.map((memo) => {
-      if (memo.id === selectedMemo.id) {
-        return { ...memo, body: selectedMemo.body };
-      } else {
-        return memo;
-      }
-    });
-    localStorage.setItem("memos", JSON.stringify(newMemos));
-    setSelectedMemo(null);
+    editMemo();
   }
 
   function handleDelete() {
-    const newMemos = allMemos.filter((memo) => memo.id !== selectedMemo.id);
-    localStorage.setItem("memos", JSON.stringify(newMemos));
-    setSelectedMemo(null);
+    deleteMemo();
   }
 
   return (

@@ -1,15 +1,11 @@
-import { v4 as uuid } from "uuid";
-import { useSelectedMemo } from "../context/selected_memo_hooks";
+import { useMemos } from "../context/memos_hooks";
 import "../css/add_memo.css";
 
-export default function AddMemo({ allMemos }) {
-  const { setSelectedMemo } = useSelectedMemo();
+export default function AddMemo() {
+  const { addMemo } = useMemos();
 
   function handleClick() {
-    const newMemo = { id: uuid(), body: "" };
-    const newMemos = [...allMemos, newMemo];
-    localStorage.setItem("memos", JSON.stringify(newMemos));
-    setSelectedMemo(newMemo);
+    addMemo();
   }
 
   return (
