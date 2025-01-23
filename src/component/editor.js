@@ -21,7 +21,7 @@ export default function Editor() {
       <textarea
         readOnly={!isLogin}
         className="text-area"
-        placeholder={isLogin && "Enter your text"}
+        placeholder={isLogin ? "Enter your text" : ""}
         value={selectedMemo.body}
         onChange={(e) =>
           setSelectedMemo({ ...selectedMemo, body: e.target.value })
