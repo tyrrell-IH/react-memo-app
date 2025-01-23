@@ -2,9 +2,9 @@ import Header from "./header";
 import TitleList from "./title_list";
 import Editor from "./editor";
 import LoginButton from "./login_button";
-import { IsLoginProvider } from "../context/is_login_hooks";
-import { MemosProvider } from "../context/memos_hooks";
-import { useSelectedMemo } from "../context/selected_memo_hooks";
+import { IsLoginProvider } from "../hooks/is_login_hooks";
+import { MemosProvider } from "../hooks/memos_hooks";
+import { useSelectedMemo } from "../hooks/selected_memo_hooks";
 import "../css/memo_app.css";
 
 export default function MemoApp() {

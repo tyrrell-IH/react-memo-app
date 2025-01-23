@@ -1,4 +1,4 @@
-import { useMemos } from "../context/memos_hooks";
+import { useMemos } from "../hooks/memos_hooks";
 import "../css/add_memo.css";
 
 export default function AddMemo() {

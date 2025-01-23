@@ -1,4 +1,4 @@
-import { useIsLogin } from "../context/is_login_hooks";
+import { useIsLogin } from "../hooks/is_login_hooks";
 
 export default function LoginButton() {
   const { isLogin, switchIsLogin } = useIsLogin();

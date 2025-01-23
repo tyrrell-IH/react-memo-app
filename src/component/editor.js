@@ -1,6 +1,6 @@
-import { useIsLogin } from "../context/is_login_hooks";
-import { useSelectedMemo } from "../context/selected_memo_hooks";
-import { useMemos } from "../context/memos_hooks";
+import { useIsLogin } from "../hooks/is_login_hooks";
+import { useSelectedMemo } from "../hooks/selected_memo_hooks";
+import { useMemos } from "../hooks/memos_hooks";
 import "../css/editor.css";
 
 export default function Editor() {
