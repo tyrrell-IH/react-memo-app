@@ -5,7 +5,7 @@
 任意のディレクトリ上で
 
 ```
-git clone -b dev-Context https://github.com/tyrrell-IH/react-memo-app.git
+git clone https://github.com/tyrrell-IH/react-memo-app.git
 ```
 
 を実行してください。
