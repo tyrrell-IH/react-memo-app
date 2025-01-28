@@ -1,12 +1,12 @@
 import { useIsLogin } from "../hooks/is_login_hooks";
 
 export default function LoginButton() {
-  const { isLogin, switchIsLogin } = useIsLogin();
+  const { isLogin, switchToLogin, switchToLogout } = useIsLogin();
 
   return (
     <button
       onClick={() => {
-        switchIsLogin();
+        isLogin ? switchToLogout() : switchToLogin();
       }}
     >
       {isLogin ? "ログアウト" : "ログイン"}

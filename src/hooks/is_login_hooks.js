@@ -4,12 +4,15 @@ const IsLoginContext = createContext(false);
 
 export function IsLoginProvider({ children }) {
   const [isLogin, setIsLogin] = useState(false);
-  const switchIsLogin = () => {
-    setIsLogin(!isLogin);
+  const switchToLogin = () => {
+    setIsLogin(true);
+  };
+  const switchToLogout = () => {
+    setIsLogin(false);
   };
 
   return (
-    <IsLoginContext.Provider value={{ isLogin, switchIsLogin }}>
+    <IsLoginContext.Provider value={{ isLogin, switchToLogin, switchToLogout }}>
       {children}
     </IsLoginContext.Provider>
   );
