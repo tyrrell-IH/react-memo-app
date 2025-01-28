@@ -9,10 +9,8 @@ export default function AddMemo() {
   }
 
   return (
-    <li>
-      <span className="add-memo" onClick={handleClick}>
-        +
-      </span>
-    </li>
+    <div className="add-memo" onClick={handleClick}>
+      +
+    </div>
   );
 }

@@ -30,9 +30,9 @@ export default function TitleList() {
   });
 
   return (
-    <ul className="title-list">
-      {titles}
+    <div>
+      <ul className="title-list">{titles}</ul>
       {isLogin && <AddMemo />}
-    </ul>
+    </div>
   );
 }
