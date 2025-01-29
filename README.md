@@ -5,7 +5,7 @@
 任意のディレクトリ上で
 
 ```
-git clone -b development https://github.com/tyrrell-IH/react-memo-app.git
+git clone https://github.com/tyrrell-IH/react-memo-app.git
 ```
 
 を実行してください。
@@ -15,7 +15,7 @@ git clone -b development https://github.com/tyrrell-IH/react-memo-app.git
 ディレクトリを`react-memo-app/my-memo`へ変更してください。
 
 ```
-cd ./react-memo-app/my-memo
+cd ./react-memo-app
 ```
 
 ### 3.npm install

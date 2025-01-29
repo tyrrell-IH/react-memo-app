@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import MemoApp from "./component/memo_app";
+import { SelectedMemoProvider } from "./hooks/selected_memo_hooks";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <SelectedMemoProvider>
+      <MemoApp />
+    </SelectedMemoProvider>
   </React.StrictMode>,
 );

@@ -4,7 +4,13 @@
   padding: 10px 20px 30px 20px;
 }
 
-.memo-contents {
+.memo-contents-header {
+  padding: 10px 20px 0 20px;
+  background-color: white;
+  text-align: right;
+}
+
+.memo-contents-body {
   display: flex;
   background-color: white;
   min-height: 300px;
